@@ -1,0 +1,19 @@
+<%- include("partials/header") -%>
+<h1>Home</h1>
+
+<% homePostList.forEach(function(elem) {%>
+<h1>
+  <%= elem.title %>
+</h1>
+<p>
+  <% if(elem.content.length <= 100) { %>
+  <%= elem.content%>
+  <% } else {%>
+  <%= elem.content.substr(0, 100) + " ..."%>
+  <% } %>
+
+  <a href= "/posts/<%=elem.title%>">Read More</a>
+</p>
+<% }) %>
+
+<%- include("partials/footer") -%>
